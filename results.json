@@ -1,0 +1,229 @@
+{
+  "n_rows": 20000,
+  "n_cols": 27,
+  "nulls": 0,
+  "duplicates": 0,
+  "neg_values_expenses": 0,
+  "spearman_target": {
+    "Income": 0.948,
+    "Groceries": 0.935,
+    "Transport": 0.933,
+    "Healthcare": 0.929,
+    "Utilities": 0.915,
+    "Entertainment": 0.895,
+    "Eating_Out": 0.894,
+    "Insurance": 0.894,
+    "Rent": 0.885,
+    "Disposable_Income": 0.877,
+    "Miscellaneous": 0.876,
+    "Potential_Savings_Groceries": 0.795,
+    "Potential_Savings_Transport": 0.792,
+    "Desired_Savings_Percentage": 0.789,
+    "Potential_Savings_Utilities": 0.78,
+    "Potential_Savings_Entertainment": 0.767,
+    "Potential_Savings_Eating_Out": 0.766,
+    "Potential_Savings_Miscellaneous": 0.757,
+    "Potential_Savings_Healthcare": 0.64,
+    "Education": 0.566,
+    "Potential_Savings_Education": 0.389,
+    "Loan_Repayment": 0.078,
+    "Age": 0.008,
+    "Dependents": -0.005
+  },
+  "skew": {
+    "Income": 4.23,
+    "Age": -0.01,
+    "Dependents": -0.0,
+    "Rent": 4.15,
+    "Loan_Repayment": 5.1,
+    "Insurance": 4.51,
+    "Groceries": 3.96,
+    "Transport": 4.74,
+    "Eating_Out": 3.89,
+    "Entertainment": 4.67,
+    "Utilities": 4.35,
+    "Healthcare": 3.88,
+    "Education": 4.31,
+    "Miscellaneous": 3.8,
+    "Desired_Savings_Percentage": 1.42,
+    "Desired_Savings": 5.59,
+    "Disposable_Income": 5.07,
+    "Potential_Savings_Groceries": 5.37,
+    "Potential_Savings_Transport": 4.36,
+    "Potential_Savings_Eating_Out": 4.23,
+    "Potential_Savings_Entertainment": 4.65,
+    "Potential_Savings_Utilities": 4.23,
+    "Potential_Savings_Healthcare": 4.83,
+    "Potential_Savings_Education": 7.36,
+    "Potential_Savings_Miscellaneous": 4.59
+  },
+  "target_desc": {
+    "count": 20000.0,
+    "mean": 4982.9,
+    "std": 7733.5,
+    "min": 0.0,
+    "25%": 1224.9,
+    "50%": 2155.4,
+    "75%": 6216.3,
+    "max": 245504.5
+  },
+  "target_zero_pct": 0.56,
+  "income_outliers_iqr_pct": 6.27,
+  "leak_excluded": [
+    "Disposable_Income",
+    "Potential_Savings_Groceries",
+    "Potential_Savings_Transport",
+    "Potential_Savings_Eating_Out",
+    "Potential_Savings_Entertainment",
+    "Potential_Savings_Utilities",
+    "Potential_Savings_Healthcare",
+    "Potential_Savings_Education",
+    "Potential_Savings_Miscellaneous"
+  ],
+  "models": {
+    "E1_principal": {
+      "Lineal": {
+        "R2": 0.9315320463016085,
+        "RMSE": 2223.994620825834,
+        "MAE": 1361.6711691537769
+      },
+      "RF_base": {
+        "R2": 0.9197709058132644,
+        "RMSE": 2407.4429416233143,
+        "MAE": 606.5809541009471,
+        "OOB_R2": 0.968690486628457
+      },
+      "XGB_base": {
+        "R2": 0.8668617403869313,
+        "RMSE": 3101.28369679291,
+        "MAE": 651.7655664001381
+      },
+      "RF_GridSearch": {
+        "R2": 0.9194705661721486,
+        "RMSE": 2411.9448940045736,
+        "MAE": 608.3490674871933,
+        "OOB_R2": 0.9689425159794995
+      },
+      "XGB_GridSearch": {
+        "R2": 0.867304664393388,
+        "RMSE": 3096.1207280185827,
+        "MAE": 648.2655156816
+      },
+      "RF_logTarget": {
+        "R2": 0.9208852717537847,
+        "RMSE": 2390.6650289374015,
+        "MAE": 602.7537145565476
+      }
+    },
+    "E2_con_pct": {
+      "Lineal": {
+        "R2": 0.9303524935964456,
+        "RMSE": 2243.070089793749,
+        "MAE": 1266.5150406375767
+      },
+      "RF_base": {
+        "R2": 0.9358639854468718,
+        "RMSE": 2152.4895063880767,
+        "MAE": 137.43240322883824,
+        "OOB_R2": 0.9916577490797308
+      },
+      "XGB_base": {
+        "R2": 0.8893962740268987,
+        "RMSE": 2826.6688768071404,
+        "MAE": 162.7952703786884
+      }
+    }
+  },
+  "split": {
+    "train": 16000,
+    "test": 4000,
+    "n_features": 29
+  },
+  "gridsearch": {
+    "best_params": {
+      "max_depth": null,
+      "max_features": 1.0,
+      "min_samples_leaf": 1,
+      "n_estimators": 200
+    },
+    "cv_r2": 0.9655219380685653
+  },
+  "gridsearch_xgb": {
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "n_estimators": 300
+  },
+  "rf_cv5": {
+    "mean": 0.9582500479567175,
+    "std": 0.020666852923207746
+  },
+  "shap_top": {
+    "Income": 3877.9,
+    "exp_ratio": 435.0,
+    "Healthcare": 16.5,
+    "Transport": 15.7,
+    "Groceries": 14.3,
+    "Utilities": 13.5,
+    "Insurance": 12.3,
+    "Rent": 10.4,
+    "Entertainment": 10.3,
+    "Age": 9.7
+  },
+  "thresholds": {
+    "bajo_lt": 1228.1,
+    "alto_gt": 6254.8
+  },
+  "segment_accuracy": 0.899,
+  "segment_confusion": [
+    [
+      863,
+      161,
+      0
+    ],
+    [
+      109,
+      1847,
+      70
+    ],
+    [
+      0,
+      64,
+      886
+    ]
+  ],
+  "demo": [
+    {
+      "ahorro_predicho": 2237.8,
+      "segmento": "Medio",
+      "recomendacion": "Optimizar deuda y gastos fijos (pr\u00e9stamos, servicios, renta)",
+      "factores_shap": [
+        "Income",
+        "exp_ratio",
+        "Groceries"
+      ],
+      "real": 2140.9
+    },
+    {
+      "ahorro_predicho": 3074.4,
+      "segmento": "Medio",
+      "recomendacion": "Optimizar deuda y gastos fijos (pr\u00e9stamos, servicios, renta)",
+      "factores_shap": [
+        "Income",
+        "exp_ratio",
+        "Insurance"
+      ],
+      "real": 3253.3
+    },
+    {
+      "ahorro_predicho": 935.9,
+      "segmento": "Bajo",
+      "recomendacion": "Reducir gasto discrecional (comer fuera, entretenimiento, varios)",
+      "factores_shap": [
+        "Income",
+        "exp_ratio",
+        "Utilities"
+      ],
+      "real": 972.4
+    }
+  ]
+}
